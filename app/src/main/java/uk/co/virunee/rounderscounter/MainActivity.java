@@ -7,6 +7,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
+import static android.R.attr.id;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -82,6 +84,19 @@ public class MainActivity extends AppCompatActivity {
         scoreView.setText(String.valueOf(team_b_outs));
     }
 
+    public void reset(MenuItem item) {
+        team_a_score = 0;
+        team_a_outs = 0;
+        team_b_score = 0;
+        team_b_outs = 0;
+        displayForTeamA(0.0);
+        displayForTeamAOut(0);
+        displayForTeamB(0.0);
+        displayForTeamBOut(0);
+    }
+
+    ;
+
     // OVERFLOW MENU STUFF //
 
     @Override
@@ -97,7 +112,6 @@ public class MainActivity extends AppCompatActivity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
         return super.onOptionsItemSelected(item);
     }
 }

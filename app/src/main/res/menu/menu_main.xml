@@ -2,5 +2,6 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:id="@+id/new_game"
         android:title="Reset score"
-        android:showAsAction="ifRoom"/>
+        android:showAsAction="ifRoom"
+        android:onClick="reset"/>
 </menu>
