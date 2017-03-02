@@ -15,10 +15,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         displayForTeamA(0.0);
         displayForTeamAOut(0);
+        displayForTeamB(0.0);
+        displayForTeamBOut(0);
     }
 
     double team_a_score = 0;
     int team_a_outs = 0;
+    double team_b_score = 0;
+    int team_b_outs = 0;
 
     public void addOneRounderA(View view) {
         team_a_score = team_a_score + 1;
@@ -48,9 +52,37 @@ public class MainActivity extends AppCompatActivity {
         scoreView.setText(String.valueOf(team_a_outs));
     }
 
+    // TEAM B //
+
+    public void addOneRounderB(View view) {
+        team_b_score = team_b_score + 1;
+        displayForTeamB(team_b_score);
+    }
+
+    public void addHalfRounderB(View view) {
+        team_b_score = team_b_score + 0.5;
+        displayForTeamB(team_b_score);
+    }
+
+    public void addOneOutB(View view) {
+        team_b_outs = team_b_outs + 1;
+        displayForTeamBOut(team_b_outs);
+    }
+
+
+    //Displays the given score for Team B.
+
+    public void displayForTeamB(double team_b_score) {
+        TextView scoreView = (TextView) findViewById(R.id.team_b_score);
+        scoreView.setText(String.valueOf(team_b_score));
+    }
+
+    public void displayForTeamBOut(int team_b_outs) {
+        TextView scoreView = (TextView) findViewById(R.id.team_b_outs);
+        scoreView.setText(String.valueOf(team_b_outs));
+    }
+
     // OVERFLOW MENU STUFF //
-
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
